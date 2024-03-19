@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&family=Tilt+Neon&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: #333;
+  transition: all 0.3s;
+}
+
+.page.active {
+  background: #fff;
+}
+
+.page.active .value {
+  text-shadow: 0px 0px 10px rgb(32, 84, 0), 0px 0px 15px rgb(132, 255, 0),
+    0px 0px 50px rgb(255, 255, 255);
+}
+
+.page.active .value {
+  color: #ffffff;
+}
+.page.active .title {
+  color: #333;
+}
+.page.active .input {
+  background: #333;
+}
+
+.typography {
+  border-radius: 5px;
+  display: flex;
+  /* background: #b1b1b1; */
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 50px;
+}
+
+@keyframes blink-input {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.input {
+  width: 3px;
+  min-height: 65px;
+  background: aqua;
+  opacity: 0;
+  border-radius: 5px;
+  animation: blink-input 0.2s linear infinite;
+}
+
+.value {
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "XROT" 0, "YROT" 0;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 10px rgb(0, 255, 255), 0px 0px 15px rgb(0, 255, 170),
+    0px 0px 15px rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.toogle {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.toogle_bar {
+  width: 60px;
+  height: 20px;
+  background: #fff;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.ball {
+  width: 25px;
+  height: 25px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px aqua;
+  position: absolute;
+  background: rgb(3, 114, 114);
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toogle_bar.active {
+  background: #333;
+}
+
+.toogle_bar.active .ball {
+  left: 60%;
+  box-shadow: 0px 0px 10px rgb(255, 163, 76);
+  background: rgb(237, 255, 76);
+  border: 2px solid rgb(86, 96, 1);
+}
